@@ -8,6 +8,6 @@ let pageData = {};
 $(function() {
   pageData.apiData = apiData;
 
-  $(".page-container").html(template(pageData));
-  console.log("here I am");
+  //$(".page-container").html(template(pageData));
+  console.log("Yo here I am");
 });

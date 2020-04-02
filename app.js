@@ -1,36 +1,30 @@
 const express = require('express');
 const app = express();
-const webpack = require('webpack');
-const webpack_config = require('./webpack.dev.js');
-const middleware = require('webpack-dev-middleware');
-const compiler = webpack(webpack_config);
-
-
-const siteData = require('./campaigns/suits-ways-to-wear-it/server/data/data_2020_04_20.json');
+const siteData = require('./data/data.json');
 
 const path = require('path');
 const bodyParser = require('body-parser');
 //const cookieParser = require('cookie-parser');
-const exphbs = require('express-handlebars');
+const handlebars = require('express-handlebars');
 
 const env = process.env.NODE_ENV || 'dev';
-app.set('port', '1111');
-let hbs = exphbs.create({
-	extname: '.hbs'
-});
+console.log("Running express app in " + env + " mode");
 
-app.set('views', __dirname + '/views');
-app.engine('.hbs', hbs.engine);
-app.set('view engine', '.hbs');
+app.set('port', process.env.port || '3000');
 
-app.use(express.static(path.join(__dirname, webpack_config.output.publicPath)));
+app.set('view engine', 'hbs');
+app.engine('hbs', handlebars({
+  layoutsDir: __dirname + '/views/layouts',
+  extname: 'hbs'
+}))
 
-app.use(middleware(compiler, {
-  publicPath: webpack_config.output.publicPath
-}));
+app.use(express.static(path.join(__dirname, 'public')));
+
 
 app.get('/', function (req, res) {
-  res.render('main', siteData);
+  console.log("root rendering")
+  //res.render('server_side_template', siteData);
+  res.render('main', {layout: 'index', apiData:siteData});
 });
 
 app.listen(app.get('port'), function() {

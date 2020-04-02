@@ -5,9 +5,9 @@
   "engines": {
     "node": "8.9.1"
   },
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node app.js",
     "server": "webpack-dev-server --mode development --config webpack.dev.js",
     "build": "webpack --mode development --config webpack.dev.js",
     "watch": "webpack --watch --mode development --config webpack.dev.js",
@@ -30,7 +30,6 @@
     "babel-loader": "^8.0.0",
     "babel-minify-webpack-plugin": "^0.3.1",
     "css-loader": "^1.0.0",
-    "express": "^4.17.1",
     "handlebars": "^4.1.2",
     "handlebars-loader": "^1.7.1",
     "html-loader": "^0.5.5",
@@ -50,6 +49,7 @@
     "webpack-dev-server": "^3.1.7"
   },
   "dependencies": {
+    "express": "^4.17.1",
     "express-handlebars": "^3.1.0"
   }
 }
