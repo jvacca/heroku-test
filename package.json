@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "skeleton project",
   "engines": {
-    "node": "8.9.1"
+    "node": "10.16.3"
   },
   "main": "app.js",
   "scripts": {
