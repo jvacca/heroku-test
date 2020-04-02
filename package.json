@@ -5,9 +5,9 @@
   "engines": {
     "node": "10.16.3"
   },
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node app.js",
     "server": "webpack-dev-server --mode development --config webpack.dev.js",
     "build": "webpack --mode development --config webpack.dev.js",
     "watch": "webpack --watch --mode development --config webpack.dev.js",

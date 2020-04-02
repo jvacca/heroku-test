@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const siteData = require('./data/data.json');
+const siteData = require(__dirname + '/data/data.json');
 
 const path = require('path');
 const bodyParser = require('body-parser');
