@@ -4,12 +4,9 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const MinifyPlugin = require('babel-minify-webpack-plugin');
 var OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
-// Enter project name here
-const project_name = "heroku-test";
-
 module.exports = {
   entry: {
-    main: `/src/js/entry.js`
+    main: `./src/js/entry.js`
   },
   mode: "development",
   output: {
