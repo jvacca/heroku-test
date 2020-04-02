@@ -24,7 +24,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', function (req, res) {
   console.log("root rendering")
   //res.render('server_side_template', siteData);
-  res.render('main', {layout: 'index', apiData:siteData});
+  res.render('main', {layout: 'index'});
 });
 
 app.listen(app.get('port'), function() {
