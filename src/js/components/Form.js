@@ -23,7 +23,7 @@ class Form extends Component {
   render() {
     return (
       <div>
-        <h1>Ladies and Gentleman it's John Vacca</h1>
+        <h1>Ladies and Gents it's John Vacca</h1>
         <p>Seriously, it's the best</p>
         <img src="assets/images/about_title_ny.png" alt="image here"></img>
         <form>
